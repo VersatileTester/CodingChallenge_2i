@@ -1,17 +1,36 @@
-// Press Shift twice to open the Search Everywhere dialog and type `show whitespaces`,
-// then press Enter. You can now see whitespace characters in your code.
+import java.util.ArrayList;
+import java.util.Arrays;
+
 public class Main {
+    /**
+     * !Counting Sum Pairs Coding Task Examples
+     * X: 1
+     * Array: [3, 4, 5, 6]
+     * Output: 0
+     *
+     * X: 15
+     * Array: [0, 15, 32, 2000, 15000]
+     * Output: 1
+     *
+     * X: 42
+     * Array: [1, 1, 10, 32, 41]
+     * Output: 2
+     */
     public static void main(String[] args) {
-        // Press Alt+Enter with your caret at the highlighted text to see how
-        // IntelliJ IDEA suggests fixing it.
-        System.out.printf("Hello and welcome!");
+        /** !DesignChoice:
+         * Technically this Class and it's Methods could have been static as it doesn't have a state to manage,
+         * but I didn't see much of a point to add complication for no foreseeable benefit.
+         * */
+        Calculator calculator = new Calculator();
 
-        // Press Shift+F10 or click the green arrow button in the gutter to run the code.
-        for (int i = 1; i <= 5; i++) {
+        // Console sugar
+        System.out.println("----------------------------------");
 
-            // Press Shift+F9 to start debugging your code. We have set one breakpoint
-            // for you, but you can always add more by pressing Ctrl+F8.
-            System.out.println("i = " + i);
-        }
+        /** !DesignChoice:
+         * Arraylists are never used after the calculation, so no point assigning them to variables beforehand.
+         */
+        calculator.calculateUniqueSumPairs(new ArrayList<>(Arrays.asList(3,4,5,6)), 1);
+        calculator.calculateUniqueSumPairs(new ArrayList<>(Arrays.asList(0, 15, 32, 2000, 15000)), 15);
+        calculator.calculateUniqueSumPairs(new ArrayList<>(Arrays.asList(1, 1, 10, 32, 41)), 42);
     }
 }
